@@ -32,7 +32,7 @@ const Navbar = () => {
             </nav>
 
             <div className='flex items-center gap-4'>
-                <button className="bg-gradient-to-r cursor-pointer flex  gap-2 px-4 py-2.5 rounded-[5px] text-white font-bold from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600">Get Started <ArrowRight/></button>
+                <button className="bg-gradient-to-r cursor-pointer flex  gap-2 px-4 py-2.5 rounded-[10px] text-white font-bold from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600">Get Started <ArrowRight/></button>
                 <button className="md:hidden"><Hamburger className = "w-2" toggled={isOpen} toggle={setOpen} size={20}/></button>
 
                 <div
