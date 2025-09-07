@@ -3,8 +3,11 @@ import {Sparkles} from 'lucide-react'
 import Hamburger from 'hamburger-react';
 import { ArrowRight } from 'lucide-react';
 import {Link} from 'react-router-dom'
+import {useClerk, UserButton, useUser} from '@clerk/clerk-react'
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
+  const {user} = useUser();
+  const { openSignIn } = useClerk();
 
   
   return (
@@ -33,14 +36,22 @@ const Navbar = () => {
             </nav>
 
             <div className='flex items-center gap-4'>
-                <button className="bg-gradient-to-r cursor-pointer flex  gap-2 px-4 py-2.5 rounded-[10px] text-white font-bold from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600">Get Started <ArrowRight/></button>
-                <button className="md:hidden"><Hamburger className = "w-2" toggled={isOpen} toggle={setOpen} size={20}/></button>
+
+                {
+                  user ? <UserButton/> : (
+                    
+                         <button onClick={openSignIn} className="bg-gradient-to-r cursor-pointer flex  gap-2 px-4 py-2.5 rounded-[10px] text-white font-bold from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600">Get Started <ArrowRight/></button>
+                        
+                    
+                  )
+                }
+               <button className="md:hidden"><Hamburger className = "w-2" toggled={isOpen} toggle={setOpen} size={20}/></button>
 
                 <div
                 className={`fixed top-[65px] bg-white right-0 h-[100vh] w-64 flex justify-center items-center backdrop-blur-md   shadow-lg transition-transform duration-300 ${
                   isOpen ? "translate-x-0" : "translate-x-full"
                 }`}
-              >
+                >
                 <nav className="p-6 flex flex-col gap-4">
                   <a href="#features">Features</a>
                   <a href="#playground">Playground</a>
