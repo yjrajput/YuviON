@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.46.1",
+    "@radix-ui/react-slot": "^1.2.3",
     "@tailwindcss/vite": "^4.1.13",
+    "class-variance-authority": "^0.7.1",
+    "hamburger-react": "^2.5.2",
     "lucide-react": "^0.542.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
