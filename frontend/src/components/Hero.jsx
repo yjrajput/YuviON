@@ -23,7 +23,7 @@ const Hero = () => {
           <div className="space-y-4">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
               <span className="block">AI-Powered</span>
-              <span className="block  bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="  bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
                 Intelligence
               </span>
               <span className="block">At Your Fingertips</span>
