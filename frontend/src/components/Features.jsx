@@ -1,42 +1,43 @@
 import React from 'react'
-import { Brain,Zap, Shield, Palette, Code, Globe } from 'lucide-react';
+import {SquarePen, Hash, Image, Eraser, Scissors, File } from 'lucide-react';
+import Card from '../ui/Card';
 const Features = () => {
 
     const features = [
   {
-    icon: Brain,
-    title: "Advanced AI Models",
-    description: "Leverage cutting-edge language models with state-of-the-art reasoning capabilities.",
+    icon: SquarePen,
+    title: "AI Article Writer",
+    description: "Generate high-quality, engaging articles on any topic with our AI writing technology.",
     gradient: "from-purple-500 to-pink-500"
   },
   {
-    icon: Zap,
-    title: "Lightning Fast",
-    description: "Get instant responses with our optimized infrastructure and edge computing.",
+    icon: Hash,
+    title: "Blog Title Generator",
+    description: "Find the perfect, catchy title for your blog posts with our AI-powered generator.",
     gradient: "from-orange-500 to-red-500"
   },
   {
-    icon: Shield,
-    title: "Enterprise Security",
-    description: "Your data is protected with end-to-end encryption and privacy-first design.",
+    icon: Image,
+    title: "AI Image Generation",
+    description: "Create stunning visuals with our AI image generation tool, Experience the power of AI",
     gradient: "from-green-500 to-emerald-500"
   },
   {
-    icon: Palette,
-    title: "Creative Tools",
-    description: "Generate images, write content, and create designs with AI-powered creativity.",
+    icon: Eraser,
+    title: "Background Removal",
+    description: "Effortlessly remove backgrounds from your images with our AI-driven tool.",
     gradient: "from-pink-500 to-rose-500"
   },
   {
-    icon: Code,
-    title: "Developer API",
-    description: "Integrate AI capabilities into your applications with our robust API.",
+    icon: Scissors,
+    title: "Object Removal",
+    description: "Remove unwanted objects from your images seamlessly with our AI object removal tool.",
     gradient: "from-blue-500 to-cyan-500"
   },
   {
-    icon: Globe,
-    title: "Global Scale",
-    description: "Available worldwide with multi-language support and local processing.",
+    icon: File,
+    title: "Resume Reviewer",
+    description: "Get your resume reviewed by AI to improve your chances of landing your dream job.",
     gradient: "from-indigo-500 to-purple-500"
   }
 ];
