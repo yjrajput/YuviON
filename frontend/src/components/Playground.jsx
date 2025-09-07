@@ -1,22 +1,52 @@
 import React, { useState } from 'react'
 import { Send, Copy, Download, Sparkles } from "lucide-react";
+import { URL } from '../../../backend/Server';
 
 const Playground = () => {
   const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async () => {
-    if (!prompt.trim()) return;
+ const handleSubmit = async () => {
+  if (!prompt.trim()) return;
 
-    setIsLoading(true);
-    setTimeout(() => {
-      setResponse(
-        `Here's a creative response to your prompt: "${prompt}"\n\nThis is a demonstration of how our AI would process and respond to your request. In the actual application, this would be powered by advanced language models providing intelligent, contextual responses.\n\nKey features:\n• Real-time processing\n• Context-aware responses\n• Multiple output formats\n• Customizable parameters`
-      );
-      setIsLoading(false);
-    }, 2000);
+  setIsLoading(true);
+
+  
+  const payload = {
+    contents: [
+      {
+        parts: [
+          {
+            text: prompt
+          }
+        ]
+      }
+    ]
   };
+
+  try {
+    let res = await fetch(URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+
+    res = await res.json();
+    console.log()
+    setResponse(
+      res.candidates[0].content.parts[0].text || "No response from server."
+    );
+  } catch (error) {
+    console.error("Error fetching:", error);
+    setResponse("Something went wrong. Please try again.");
+  } finally {
+    setIsLoading(false);
+  }
+};
+
 
   const demoPrompts = [
     "Write a creative story about a robot learning to paint",
@@ -31,7 +61,7 @@ const Playground = () => {
       className="py-20 px-4 bg-gradient-to-b from-background to-muted/10"
     >
       <div className="container mx-auto max-w-4xl">
-        {/* Title */}
+        
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
             Try Our AI <br />
@@ -46,7 +76,7 @@ const Playground = () => {
         </div>
 
         <div className="space-y-6">
-          {/* Demo Prompts */}
+         
           <div className="space-y-3">
             <label className="text-sm font-medium text-muted-foreground">
               Try these examples:
@@ -64,7 +94,7 @@ const Playground = () => {
             </div>
           </div>
 
-          {/* Input Area */}
+     
           <div className="p-6 bg-white/80 dark:bg-neutral-900/80 border rounded-2xl shadow-sm">
             <div className="space-y-4">
               <div className="space-y-2 flex flex-col">
@@ -96,7 +126,6 @@ const Playground = () => {
             </div>
           </div>
 
-          {/* Response Area */}
           {response && (
             <div className="p-6 bg-white/80 dark:bg-neutral-900/80 border rounded-2xl shadow-sm">
               <div className="space-y-4">
