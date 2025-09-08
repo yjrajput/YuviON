@@ -1,6 +1,8 @@
 import React from 'react'
 import { ArrowRight, Zap, Play } from 'lucide-react'
+import { useNavigate } from 'react-router-dom';
 const Hero = () => {
+  const navigation = useNavigate();
   return (
     <section id='home' className="pt-32 pb-20 px-4 relative overflow-hidden">
       {/* Background gradient */}
@@ -36,8 +38,7 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <button
-              
+            <button onClick={() =>navigation('/ai')}
               className="bg-gradient-to-r flex rounded-[10px] text-white items-center from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 px-8 py-3 text-lg group"
             >
               Start Building Now
