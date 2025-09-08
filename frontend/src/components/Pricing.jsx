@@ -15,7 +15,7 @@ const Pricing = () => {
             Start for free and scale up as you grow. Find the perfect plan for your content creation needs.
           </p>
         </div>
-        <div className="max-w-3xl mx-auto p-6 rounded-2xl min-h-[700px]">
+        <div className="max-w-4xl mx-auto p-6 rounded-2xl min-h-[400px]">
             <PricingTable />
         </div>
         </div>

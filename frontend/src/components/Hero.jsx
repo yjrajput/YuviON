@@ -2,7 +2,7 @@ import React from 'react'
 import { ArrowRight, Zap, Play } from 'lucide-react'
 const Hero = () => {
   return (
-    <section className="pt-32 pb-20 px-4 relative overflow-hidden">
+    <section id='home' className="pt-32 pb-20 px-4 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-purple-950/20 dark:via-pink-950/20 dark:to-blue-950/20" />
       
@@ -37,15 +37,14 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <button
-              size="lg" 
+              
               className="bg-gradient-to-r flex rounded-[10px] text-white items-center from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 px-8 py-3 text-lg group"
             >
               Start Building Now
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </button>
             <button 
-              variant="outline" 
-              size="lg" 
+             
               className="px-8 py-3 flex items-center rounded-[10px] border-1 border-black text-lg backdrop-blur-sm bg-background/60 group"
             >
               <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />

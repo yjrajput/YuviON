@@ -21,6 +21,9 @@ const Navbar = () => {
             </Link>
 
             <nav className="hidden md:flex items-center gap-8">
+              <a href="#home" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Home
+                </a>
                 <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
                   Features
                 </a>
@@ -53,6 +56,7 @@ const Navbar = () => {
                 }`}
                 >
                 <nav className="p-6 flex flex-col gap-4">
+                  <a href="#home">Home</a>
                   <a href="#features">Features</a>
                   <a href="#playground">Playground</a>
                   <a href="#pricing">Pricing</a>
