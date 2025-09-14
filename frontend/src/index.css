@@ -202,3 +202,12 @@ html {
   font-size: var(--font-size);
 }
 
+.reset-tw,
+.reset-tw * {
+  all: revert; /* removes Tailwind’s utility overrides */
+  box-sizing: border-box; /* keep a sane default */
+}
+.cl-drawerRoot {
+  position: relative; /* or absolute/fixed if needed */
+  z-index: 1000; /* higher than 10 so it stays on top */
+}

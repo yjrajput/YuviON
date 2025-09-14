@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Send, Copy, Download, Sparkles } from "lucide-react";
 import { URL } from '../../../backend/Server';
-
+import Markdown from 'react-markdown'
 const Playground = () => {
   const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
@@ -142,8 +142,10 @@ const Playground = () => {
                     </button>
                   </div>
                 </div>
-                <div className="bg-muted/20 rounded-lg p-4 text-sm leading-relaxed whitespace-pre-line">
+                <div className="reset-tw bg-muted/20 max-h-[300px] overflow-y-scroll rounded-lg p-4 text-sm leading-relaxed whitespace-pre-line">
+                  <Markdown>
                   {response}
+                  </Markdown>
                 </div>
               </div>
             </div>
