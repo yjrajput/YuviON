@@ -127,7 +127,7 @@ const Playground = () => {
           </div>
 
           {response && (
-            <div className="p-6 bg-white/80 dark:bg-neutral-900/80 border rounded-2xl shadow-sm">
+            <div className="p-6 bg-white/80 dark:bg-neutral-900/80 border rounded-2xl shadow-sm overflow-y-scroll max-h-[500px]">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <label className="text-sm font-medium">AI Response</label>
