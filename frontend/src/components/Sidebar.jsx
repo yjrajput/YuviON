@@ -1,5 +1,6 @@
 import { Protect, useClerk, useUser } from "@clerk/clerk-react";
-import { Eraser, FileText, Hash, House, Image, LogOut, Scissors, SquarePen } from "lucide-react";
+import { Eraser, FileText, Hash, House, Image, LogOut, Scissors, SquarePen, } from "lucide-react";
+import { User } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 const Sidebar = ({ sidebar, setSidebar }) => {
@@ -14,6 +15,7 @@ const Sidebar = ({ sidebar, setSidebar }) => {
         { to: '/ai/remove-background', lable: 'Remove Background', Icon: Eraser },
         { to: '/ai/remove-object', lable: 'Remove Object', Icon: Scissors },
         { to: '/ai/review-resume', lable: 'Review Resume', Icon: FileText },
+        { to: '/ai/community', lable: 'Community', Icon: User },
     ]
 
     return (
